@@ -100,6 +100,11 @@ class ColorPanel extends React.Component {
       >
         <Divider />
         <Button icon='add' size='small' color='blue' onClick={this.openModal} />
+        {/* <div>
+          <a href='https://peercode-ide.onrender.com' >
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvWPUF0ouXQagxGLMjOiY3K56Yl-xuOdx-oQ&usqp=CAU'/>
+          </a>
+        </div> */}
         {this.displayUserColors(userColors)}
 
         {/* Color Picker Modal */}
