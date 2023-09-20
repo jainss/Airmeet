@@ -8,7 +8,7 @@ class DirectMessages extends React.Component {
   state = {
     activeChannel: '',
     user: this.props.currentUser,
-    users: [],
+    users: ['jainss'],
     usersRef: firebase.database().ref('users'),
     connectedRef: firebase.database().ref('.info/connected'),
     presenceRef: firebase.database().ref('presence')
@@ -112,7 +112,9 @@ class DirectMessages extends React.Component {
           </span>{' '}
           ({users.length})
         </Menu.Item>
-        {users.map((user) => (
+      
+        { 
+        users.map((user) => (
           <Menu.Item
             key={user.uid}
             active={user.uid === activeChannel}
@@ -123,7 +125,7 @@ class DirectMessages extends React.Component {
               name='circle'
               color={this.isUserOnline(user) ? 'green' : 'red'}
             />
-            @ {user.name}
+            @ {'Vaibhav'}
           </Menu.Item>
         ))}
       </Menu.Menu>
