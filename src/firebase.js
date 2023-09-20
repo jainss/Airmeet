@@ -3,14 +3,14 @@ import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/storage';
 
-var firebaseConfig = {
-  apiKey: 'AIzaSyDa4ly_9XEMZmqNdKaD1O7DziBpLca-VEM',
-  authDomain: 'slack-chat-app-clone.firebaseapp.com',
-  databaseURL: 'https://slack-chat-app-clone.firebaseio.com',
-  projectId: 'slack-chat-app-clone',
-  storageBucket: 'slack-chat-app-clone.appspot.com',
-  messagingSenderId: '827039025989',
-  appId: '1:827039025989:web:a0acf099d3cc844cb48c2c'
+const firebaseConfig = {
+  apiKey: "AIzaSyCwA4NtLEd6BTUXr6AoUnL6_u_jILAxYIA",
+  authDomain: "airmeet-9e12e.firebaseapp.com",
+  databaseURL: 'https://airmeet-9e12e-default-rtdb.firebaseio.com/',
+  projectId: "airmeet-9e12e",
+  storageBucket: "airmeet-9e12e.appspot.com",
+  messagingSenderId: "1065554454173",
+  appId: "1:1065554454173:web:4d0eaed34b0411a81b5674",
 };
 firebase.initializeApp(firebaseConfig);
 
