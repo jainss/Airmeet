@@ -1,6 +1,4 @@
-# Slack (clone)
-
-> _This is a clone of Slack chat app made using React._
+#AirMeet
 
 ### To run the project locally on your machine:
 
