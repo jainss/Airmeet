@@ -62,8 +62,8 @@ class Login extends React.Component {
     return (
       <Grid textAlign='center' verticalAlign='middle' className='app'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h1' icon color='violet' textAlign='center'>
-            <Icon name='code branch' color='violet' />
+          <Header as='h1' icon color='black' textAlign='center'>
+            <Icon name='connectdevelop' color='black' />
             Login to AirMeet
           </Header>
           <Form onSubmit={this.handleSubmit} size='large'>
@@ -95,7 +95,7 @@ class Login extends React.Component {
               <Button
                 disabled={loading}
                 className={loading ? 'loading' : ''}
-                color='violet'
+                color='black'
                 fluid
                 size='large'
               >

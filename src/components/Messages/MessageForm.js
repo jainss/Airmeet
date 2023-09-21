@@ -235,12 +235,14 @@ class MessageForm extends React.Component {
         />
         <Button.Group icon widths='2'>
           <Button
+            // className='ui blue button'
             onClick={this.sendMessage}
             disabled={loading}
             color='blue'
             content='Add Reply'
             labelPosition='left'
             icon='edit'
+            
           />
           <Button
             color='teal'

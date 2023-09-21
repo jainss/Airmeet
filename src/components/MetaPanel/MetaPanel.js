@@ -64,7 +64,7 @@ class MetaPanel extends React.Component {
             {channel && channel.details}
           </Accordion.Content>
 
-          <Accordion.Title
+          {/* <Accordion.Title
             active={activeIndex === 1}
             index={1}
             onClick={this.setActiveIndex}
@@ -72,7 +72,7 @@ class MetaPanel extends React.Component {
             <Icon name='dropdown' />
             <Icon name='user circle' />
             Top Posters
-          </Accordion.Title>
+          </Accordion.Title> */}
           <Accordion.Content active={activeIndex === 1}>
             <List>{userPosts && this.displayTopPosters(userPosts)}</List>
           </Accordion.Content>

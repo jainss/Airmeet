@@ -1,19 +1,19 @@
-import React from 'react';
-import firebase from '../../firebase';
-import { connect } from 'react-redux';
-import { setColors } from '../../actions';
+import React from "react";
+import firebase from "../../firebase";
+import { connect } from "react-redux";
+import { setColors } from "../../actions";
 // prettier-ignore
 import { Sidebar, Menu, Divider, Button, Modal, Icon, Label, Segment } from "semantic-ui-react";
-import { SliderPicker } from 'react-color';
+import { SliderPicker } from "react-color";
 
 class ColorPanel extends React.Component {
   state = {
     modal: false,
-    primary: '',
-    secondary: '',
+    primary: "",
+    secondary: "",
     user: this.props.currentUser,
-    usersRef: firebase.database().ref('users'),
-    userColors: []
+    usersRef: firebase.database().ref("users"),
+    userColors: [],
   };
 
   componentDidMount() {
@@ -32,7 +32,7 @@ class ColorPanel extends React.Component {
 
   addListener = (userId) => {
     let userColors = [];
-    this.state.usersRef.child(`${userId}/colors`).on('child_added', (snap) => {
+    this.state.usersRef.child(`${userId}/colors`).on("child_added", (snap) => {
       userColors.unshift(snap.val());
       this.setState({ userColors });
     });
@@ -54,10 +54,10 @@ class ColorPanel extends React.Component {
       .push()
       .update({
         primary,
-        secondary
+        secondary,
       })
       .then(() => {
-        console.log('Colors added');
+        console.log("Colors added");
         this.closeModal();
       })
       .catch((err) => console.error(err));
@@ -69,12 +69,12 @@ class ColorPanel extends React.Component {
       <React.Fragment key={i}>
         <Divider />
         <div
-          className='color__container'
+          className="color__container"
           onClick={() => this.props.setColors(color.primary, color.secondary)}
         >
-          <div className='color__square' style={{ background: color.primary }}>
+          <div className="color__square" style={{ background: color.primary }}>
             <div
-              className='color__overlay'
+              className="color__overlay"
               style={{ background: color.secondary }}
             />
           </div>
@@ -92,19 +92,22 @@ class ColorPanel extends React.Component {
     return (
       <Sidebar
         as={Menu}
-        icon='labeled'
+        icon="labeled"
         inverted
         vertical
         visible
-        width='very thin'
+        width="very thin"
       >
         <Divider />
-        <Button icon='add' size='small' color='blue' onClick={this.openModal} />
-        {/* <div>
-          <a href='https://peercode-ide.onrender.com' >
-            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvWPUF0ouXQagxGLMjOiY3K56Yl-xuOdx-oQ&usqp=CAU'/>
-          </a>
-        </div> */}
+        <Button icon="add" size="small" color="" onClick={this.openModal} />
+
+        <div style={{ marginTop: 5, marginRight: 5 }}>
+          <form action="https://peercode-ide.onrender.com" target="_">
+            <Button icon="code" size="small" color="blue" />
+            <h6 style={{ color: "white", marginTop:0, paddingTop:0 }}>peercode</h6>
+          </form>
+        </div>
+
         {this.displayUserColors(userColors)}
 
         {/* Color Picker Modal */}
@@ -112,7 +115,7 @@ class ColorPanel extends React.Component {
           <Modal.Header>Choose App Colors</Modal.Header>
           <Modal.Content>
             <Segment inverted>
-              <Label content='Primary Color' />
+              <Label content="Primary Color" />
               <SliderPicker
                 color={primary}
                 onChange={this.handleChangePrimary}
@@ -120,7 +123,7 @@ class ColorPanel extends React.Component {
             </Segment>
 
             <Segment inverted>
-              <Label content='Secondary Color' />
+              <Label content="Secondary Color" />
               <SliderPicker
                 color={secondary}
                 onChange={this.handleChangeSecondary}
@@ -128,11 +131,11 @@ class ColorPanel extends React.Component {
             </Segment>
           </Modal.Content>
           <Modal.Actions>
-            <Button color='green' inverted onClick={this.handleSaveColors}>
-              <Icon name='checkmark' /> Save Colors
+            <Button color="green" inverted onClick={this.handleSaveColors}>
+              <Icon name="checkmark" /> Save Colors
             </Button>
-            <Button color='red' inverted onClick={this.closeModal}>
-              <Icon name='remove' /> Cancel
+            <Button color="red" inverted onClick={this.closeModal}>
+              <Icon name="remove" /> Cancel
             </Button>
           </Modal.Actions>
         </Modal>
